@@ -1,0 +1,55 @@
+{
+  "name": "burger-toolkit",
+  "version": "0.0.21",
+  "desceription": "A toolkit written to do cool stuff.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/popwser/burger-toolkit.git"
+  },
+  "keywords": [
+    "toolkit"
+  ],
+  "author": {
+    "name": "Michael Buerger",
+    "email": "michaelbuergerart@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/popwser/burger-toolkit/issues"
+  },
+  "homepage": "https://github.com/popwser/burger-toolkit#readme",
+  "dependencies": {
+    "colors": "^1.1.2"
+  },
+  "gitHead": "72032b5fb46699c5127b854333979ca821c0d5a1",
+  "description": "A toolkit written for Node.js.",
+  "_id": "burger-toolkit@0.0.21",
+  "_shasum": "ed4976ad2ac63b67af43615cb1e3abd8aedb2bd5",
+  "_from": "burger-toolkit@latest",
+  "_npmVersion": "2.15.5",
+  "_nodeVersion": "4.4.5",
+  "_npmUser": {
+    "name": "popwser",
+    "email": "michaelbuergerart@gmail.com"
+  },
+  "dist": {
+    "shasum": "ed4976ad2ac63b67af43615cb1e3abd8aedb2bd5",
+    "tarball": "https://registry.npmjs.org/burger-toolkit/-/burger-toolkit-0.0.21.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "popwser",
+      "email": "michaelbuergerart@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/burger-toolkit-0.0.21.tgz_1466040305949_0.65681193000637"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/burger-toolkit/-/burger-toolkit-0.0.21.tgz"
+}
