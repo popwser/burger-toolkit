@@ -74,3 +74,4 @@ jspm_packages
 # Custom
 test.js
 makefile
+*.txt

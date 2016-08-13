@@ -1,5 +1,6 @@
 var fs = require('fs');
 var colors = require('colors');
+var sa = require('strip-ansi')
 
 exports.colorString = function(string, color) {
   if(color !== null) {
@@ -20,6 +21,25 @@ exports.colorString = function(string, color) {
   }
 }
 
+exports.colorString = function(string, color) {
+  if(color !== null) {
+    switch(color) {
+      case 0: return string.black; break;
+      case 1: return string.red; break;
+      case 2: return string.green; break;
+      case 3: return string.yellow; break;
+      case 4: return string.blue; break;
+      case 5: return string.magenta; break;
+      case 6: return string.cyan; break;
+      case 7: return string.white; break;
+      case 8: return string.gray; break;
+      case 9: return string.grey; break;
+    }
+  }else {
+    return string;
+  }
+}
+
 exports.colorStringBG = function(string, color) {
   if(color !== null) {
     switch(color) {
@@ -31,10 +51,33 @@ exports.colorStringBG = function(string, color) {
       case 'magenta': return string.bgMagenta; break;
       case 'cyan': return string.bgCyan; break;
       case 'white': return string.bgWhite; break;
+      case 'gray': return string.bgWhite; break;
+      case 'grey': return string.bgWhite; break;
     }
   }else {
     return string;
   }
+}
+
+exports.colorStringBG = function(string, color) {
+  if(color !== null) {
+    switch(color) {
+      case 0: return string.bgBlack; break;
+      case 1: return string.bgRed; break;
+      case 2: return string.bgGreen; break;
+      case 3: return string.bgYellow; break;
+      case 4: return string.bgBlue; break;
+      case 5: return string.bgMagenta; break;
+      case 6: return string.bgCyan; break;
+      case 7: return string.bgWhite; break;
+    }
+  }else {
+    return string;
+  }
+}
+
+exports.strip(message) {
+  return sa(message);
 }
 
 exports.styleString = function(string, style) {
@@ -55,20 +98,8 @@ exports.styleString = function(string, style) {
 }
 
 exports.log = function(file, message) {
-  fs.appendFile(file, message + "\n", function(err) {});
+  fs.appendFile(file, exports.strip(message)+"\n", function(err) {});
   console.log(message);
-}
-
-exports.printArray = function(array) {
-  for(var i=0;i<array.length;i++) {
-    console.log(array[i]);
-  }
-}
-
-exports.printArray = function(array, color, background) {
-  for(var i=0;i<array.length;i++) {
-    console.log(exports.colorString(exports.colorStringBG(exports.styleString(array[i], null), background), color));
-  }
 }
 
 exports.logArray = function(file, array) {
