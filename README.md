@@ -13,8 +13,9 @@ or ```console.log(colors.green('someString'))```  \
 BUT, if you want to pass the color, background and or styling from the end-user to the program, you will need to do something like this: \
 ```if(color === "black") console.log("someString".black)``` for every possible color that you might want to support, but burger-toolkit allows you to do:\
 ```console.log(burger.colorString("someString", "black"))``` or \
-```console.log(burger.colorString("someString", 0)``` depending on your use, \
-this allows you to pass any color, background, or styling information as a string or integer.
+```console.log(burger.colorString("someString", burger.c(0)))``` depending on your use, \
+this allows you to pass any color, background, or styling information as a string or integer \
+```burger.c(int)``` will return a color depending on the integer you give it. ```burger.c(0)``` returns "black" \
 Also, there are similar functions for styling and background: \
 ```console.log(burger.colorStringBG("someString", "black")``` \
 ```console.log(burger.styleString("someString", "bold")``` \
@@ -30,7 +31,6 @@ The last one will log each element in array with a certain color and background.
 
 # Useful Information
 ---
-Color and background methods can except a string "black" for example, or an integer.
 
 ```burger.strip("someString")``` will strip any string of it's ANSI color information using [strip-ansi]()
 
@@ -46,5 +46,5 @@ Color and background methods can except a string "black" for example, or an inte
 "white" or 7 \
 "gray" or 8 \
 "grey" or 9 \
-you can use either when using `burger.colorString(string, color)` \
+you can use ```burger.c(int)``` for `burger.colorString(string, color)` \
 or `burger.colorStringBG(string, bgColor)`

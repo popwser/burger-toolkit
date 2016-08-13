@@ -2,6 +2,25 @@ var fs = require('fs');
 var colors = require('colors');
 var sa = require('strip-ansi')
 
+exports.c = function(num) {
+  if(num > -1 && num < 10) {
+    switch(num) {
+      case 0: return "black"; break;
+      case 1: return "red"; break;
+      case 2: return "green"; break;
+      case 3: return "yellow"; break;
+      case 4: return "blue"; break;
+      case 5: return "magenta"; break;
+      case 6: return "cyan"; break;
+      case 7: return "white"; break;
+      case 8: return "gray"; break;
+      case 9: return "grey"; break;
+    }
+  }else {
+    return "white"
+  }
+}
+
 exports.colorString = function(string, color) {
   if(color !== null) {
     switch(color) {
@@ -15,25 +34,6 @@ exports.colorString = function(string, color) {
       case 'white': return string.white; break;
       case 'gray': return string.gray; break;
       case 'grey': return string.grey; break;
-    }
-  }else {
-    return string;
-  }
-}
-
-exports.colorString = function(string, color) {
-  if(color !== null) {
-    switch(color) {
-      case 0: return string.black; break;
-      case 1: return string.red; break;
-      case 2: return string.green; break;
-      case 3: return string.yellow; break;
-      case 4: return string.blue; break;
-      case 5: return string.magenta; break;
-      case 6: return string.cyan; break;
-      case 7: return string.white; break;
-      case 8: return string.gray; break;
-      case 9: return string.grey; break;
     }
   }else {
     return string;
@@ -59,24 +59,7 @@ exports.colorStringBG = function(string, color) {
   }
 }
 
-exports.colorStringBG = function(string, color) {
-  if(color !== null) {
-    switch(color) {
-      case 0: return string.bgBlack; break;
-      case 1: return string.bgRed; break;
-      case 2: return string.bgGreen; break;
-      case 3: return string.bgYellow; break;
-      case 4: return string.bgBlue; break;
-      case 5: return string.bgMagenta; break;
-      case 6: return string.bgCyan; break;
-      case 7: return string.bgWhite; break;
-    }
-  }else {
-    return string;
-  }
-}
-
-exports.strip(message) {
+exports.strip = function(message) {
   return sa(message);
 }
 
@@ -110,6 +93,6 @@ exports.logArray = function(file, array) {
 
 exports.logArray = function(file, array, color, background) {
   for(var i=0;i<array.length;i++) {
-    exports.log(file, exports.colorString(exports.colorStringBG(exports.styleString(array[i], null), background), color));
+    exports.log(file, exports.colorString(exports.colorStringBG(array[i], background), color));
   }
 }
