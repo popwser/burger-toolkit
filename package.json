@@ -1,7 +1,7 @@
 {
   "name": "burger-toolkit",
-  "version": "0.0.21",
-  "desceription": "A toolkit written to do cool stuff.",
+  "version": "1.0.1",
+  "description": "A toolkit written for Node.js.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,10 +23,10 @@
   },
   "homepage": "https://github.com/popwser/burger-toolkit#readme",
   "dependencies": {
-    "colors": "^1.1.2"
+    "colors": "^1.1.2",
+    "strip-ansi": "^3.0.1"
   },
   "gitHead": "72032b5fb46699c5127b854333979ca821c0d5a1",
-  "description": "A toolkit written for Node.js.",
   "_id": "burger-toolkit@0.0.21",
   "_shasum": "ed4976ad2ac63b67af43615cb1e3abd8aedb2bd5",
   "_from": "burger-toolkit@latest",
